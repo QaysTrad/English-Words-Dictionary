@@ -1,0 +1,26 @@
+{
+  "name": "english-words-dictionary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QaysTrad/English-Words-Dictionary.git"
+  },
+  "author": "QaysTrad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QaysTrad/English-Words-Dictionary/issues"
+  },
+  "homepage": "https://github.com/QaysTrad/English-Words-Dictionary#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.3.4",
+    "nodemon": "^1.18.4",
+    "path": "^0.12.7"
+  }
+}
