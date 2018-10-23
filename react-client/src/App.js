@@ -1,25 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Button, TextField } from '@material-ui/core';
+import axios from 'axios';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      theWord: ''
+    }
+  }
+  sendWord = (word) => {
+    console.log('me',this.state.theWord)
+    axios.post('/defWord', {word:word})
+    .then(() => {
+      console.log('done');
+    })
+    .catch((err) => {
+      throw err;
+    })
+  }
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  };
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+          <h2>Dictionary</h2>
+          <h3>Word</h3>
+          <TextField
+          id="theWord"
+          label="Word"
+          name='theWord'
+          onChange={this.onChange}
+          margin="normal"
+        />
+          <Button onClick={() => this.sendWord(this.state.theWord)}
+          >Defintion</Button
           >
-            Learn React
-          </a>
-          <h1>test</h1>
+          <div className="Word">
+
+          </div>
         </header>
       </div>
     );
