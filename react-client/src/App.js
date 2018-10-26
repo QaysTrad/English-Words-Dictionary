@@ -12,14 +12,14 @@ class App extends Component {
     }
   }
   sendWord = (word) => {
-    console.log('me',this.state.theWord)
-    axios.post('/defWord', {word:word})
-    .then(() => {
-      console.log('done');
-    })
-    .catch((err) => {
-      throw err;
-    })
+    console.log('me', this.state.theWord)
+    axios.post('/defWord', { word: word })
+      .then(() => {
+        console.log('done');
+      })
+      .catch((err) => {
+        throw err;
+      })
   }
   onChange = (e) => {
     this.setState({
@@ -31,17 +31,23 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h2>Dictionary</h2>
-          <h3>Word</h3>
           <TextField
-          id="theWord"
-          label="Word"
-          name='theWord'
-          onChange={this.onChange}
-          margin="normal"
-        />
-          <Button onClick={() => this.sendWord(this.state.theWord)}
-          >Defintion</Button
-          >
+            id="theWord"
+            label="Word"
+            name='theWord'
+            onChange={this.onChange}
+            margin="normal"
+            variant="outlined"
+            fullWidth
+            className="text"
+          />
+          <br/>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => this.sendWord(this.state.theWord)}
+          >Defintion
+          </Button>
           <div className="Word">
 
           </div>
