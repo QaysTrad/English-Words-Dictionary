@@ -41,7 +41,7 @@ class App extends Component {
             fullWidth
             className="text"
           />
-          <br/>
+          <br />
           <Button
             variant="contained"
             color="primary"

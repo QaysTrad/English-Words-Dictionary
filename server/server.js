@@ -1,6 +1,6 @@
 const express = require('express');
-const path = require('path'); 
-const app = express(); 
+const path = require('path');
+const app = express();
 const bodyParser = require('body-parser');
 const url = require('url');
 const request = require('request');
@@ -14,11 +14,10 @@ var app_id = "QaysTrad https://english-dictonary.herokuapp.com/ 57f0d369";
 var app_key = "QaysTrad https://english-dictonary.herokuapp.com/ ede52ba120cd53787ff1cd4bda9593f8";
 var dict = new Dictionary(app_id, app_key);
 
-dict.find("ace",function(error,data)
-{
-    if(error)
-     return console.log(error); 
-     console.log(data); 
+dict.find("ace", function (error, data) {
+    if (error)
+        return console.log(error);
+    console.log(data);
 });
 
 app.post('/defWord', (req, res) => {
@@ -53,10 +52,10 @@ app.post('/defWord', (req, res) => {
 // all the http methods, and the handler functions in the handler file.
 app.get('/*', (req, res) => {
     res.sendFile(path.resolve(path.join(__dirname, '../react-client/build/index.html')))
-  });
-  
+});
 
-const PORT = process.env.PORT || 3000; 
+
+const PORT = process.env.PORT || 3000;
 
 if (!module.parent) {
     app.listen(PORT, () => {
