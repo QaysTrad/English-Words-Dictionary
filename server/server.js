@@ -15,7 +15,7 @@ var dict = new Dictionary(app_id, app_key);
 app.post('/defWord', (req, res) => {
     dict.find(req.body.word, function (error, data) {
         if (error)
-            return console.log(error);
+            res.sendStatus(400);
         res.send(data)
     });
 })
