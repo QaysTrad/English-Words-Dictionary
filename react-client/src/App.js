@@ -28,7 +28,8 @@ class App extends Component {
         this.setState({ data: lexicalCategory })
       })
       .catch((err) => {
-        throw err;
+        alert("there's no such a thing");
+        window.location.reload();
       })
   }
 
