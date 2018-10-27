@@ -10,12 +10,16 @@
   font-size: calc(5px + 2vmin);
 }
 
-.App-link {
-  color: #61dafb;
-}
 .Word{
-  background-color: aliceblue;
+  color: #e6f8fd;
+  background-color: #282c34;
+  margin-left: 5%;
 }
 .text{
   background-color: aliceblue;
+}
+.bod{
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
 }
